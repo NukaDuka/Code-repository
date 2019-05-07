@@ -33,7 +33,7 @@ template<class T>
 class Matrix
 {
 	private:
-	int **mat;
+	T **mat;
 	size_t sizer;
 	size_t sizec;
 	public:
