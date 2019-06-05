@@ -1,0 +1,9 @@
+*.out
+o
+*.exe
+.vscode
+run.sh
+.s
+in.txt
+out.txt
+*.code-workspace
