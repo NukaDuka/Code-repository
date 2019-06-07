@@ -71,25 +71,26 @@ void deleteAtValue(Node<T> **head, T val)
     }
 }
 
+template<class T>
+void deleteList(Node<T> **head)
+{
+    if (*head == nullptr) return;
+    Node<T> *temp = *head;
+    Node<T> *prev;
+    while (temp)
+    {
+        prev = temp;
+        temp = temp->next;
+        delete(prev);
+    }
+}
+
 int main(void)
 {
     Node<int> *tail = new Node<int>(nullptr, 100);
     Node<int> *mid = new Node<int>(tail, 1000);
     Node<int> *head = new Node<int>(mid, 10000);
     
-    Node<int> *temp = head;
-    while (temp)
-    {
-        cout << temp->data << endl;
-        temp = temp->next;
-    }
-    cout << endl;
-    deleteAtValue<int>(&head, 10000);
-    temp = head;
-    while (temp)
-    {
-        cout << temp->data << endl;
-        temp = temp->next;
-    }
+    deleteList<int>(&head);
     return 0;
 }
